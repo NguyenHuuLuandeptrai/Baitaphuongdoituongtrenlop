@@ -158,25 +158,33 @@ public class NguyenHuuLuan_110122108 {
 	    System.out.print("Nhap vao so C: ");
 	    C = ip.nextDouble();
 	    
+	    if(A==0){
+	    	double x = -C/B;
+	    	System.out.print("\nNghiem cua phuong trinh bac nhat la: "+ x);
+	    }
 	    //Tinh Delta
-	    Delta = (B*B) - (4*A*C);
-	    if(Delta < 0){
-	    	System.out.print("\nPhuong trinh vo nghiem!");
+	    else if(A!=0){
+	    	Delta = (B*B) - (4*A*C);
+		    if(Delta < 0){
+		    	System.out.print("\nPhuong trinh vo nghiem!");
+		    }
+		    else if(Delta == 0){
+		    	x1 = (-B/(2*A));
+		    	System.out.print("Nghiem kep x1 = x2 =  "+x1);
+		    }
+		    else if(Delta > 0){
+		    	x1 = (((-B) + Math.sqrt(Delta))/(2*A));
+		    	x2 = (((-B) - Math.sqrt(Delta))/(2*A));
+		    	System.out.print("Nghiem thu nhat= "+x1);
+		    	System.out.print("Nghiem thu hai= "+x2);
+		    }
+		    
+		    
 	    }
-	    else if(Delta == 0){
-	    	x1 = (-B/(2*A));
-	    	System.out.print("Nghiem kep x1 = x2 =  "+x1);
-	    }
-	    else if(Delta > 0){
-	    	x1 = (((-B) + Math.sqrt(Delta))/(2*A));
-	    	x2 = (((-B) - Math.sqrt(Delta))/(2*A));
-	    	System.out.print("Nghiem thu nhat= "+x1);
-	    	System.out.print("Nghiem thu hai= "+x2);
-	    }
-	    
 	    System.out.print("\nAn phim bat ki de ket thuc chuong trinh");
 	    ip.nextLine();
 	    ip.nextLine();
+	    
 	}
 
 }
